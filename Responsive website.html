@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Responsive Website</title>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<style>
+  
+  body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    color: white;
+  }
+  header {
+    background-color:yellowgreen;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    animation: slideIn 1s forwards;
+    
+  }
+
+  @keyframes slideIn {
+    0% {
+      transform: translateY(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+  nav {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+  }
+  .logo {
+    font-size: 65px;
+    
+  }
+  .signup {
+    font-weight: bold;
+    font-size: 40px;
+  }
+  main {
+    padding: 20px;
+    text-align: center; 
+    
+  }
+  footer {
+    background-color: black;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+  .buttons {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .buttons button {
+    padding: 15px 25px; 
+    margin: 0 10px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    font-size: 20px; 
+  }
+  .buttons button:hover {
+    border-radius: 20px;
+  }
+  .images-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .images-container img {
+    width: 140px;
+    height: auto;
+    margin: 10px;
+    border-radius: 8px;
+    border: 5px solid #fff; 
+    transition: transform 0.3s ease-in-out;
+  }
+  .images-container img:hover {
+    transform: scale(1.1);
+  }
+  .social-icons {
+    margin-top: 20px;
+  }
+  .social-icons a {
+    display: inline-block;
+    margin: 0 15px; 
+    font-size: 36px;
+    transition: transform 0.3s ease-in-out; 
+  }
+  .social-icons a:hover {
+    transform: scale(1.2); 
+  }
+
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+  }
+  .modal img {
+    max-width: 80%;
+    max-height: 80%;
+  }
+  .scroll-to-top-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 24px;
+    background-color: blue;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    display: none;
+  }
+  nav ul {
+    display: none;
+    position: absolute;
+    background-color: maroon;
+    list-style-type: none;
+    padding: 0;
+  }
+  nav ul li {
+    padding: 10px;
+  }
+  nav ul.show {
+    display: block;
+  }
+  .dark-mode-toggle {
+    position: fixed;
+    top: 80px; 
+    right: 20px;
+    font-size: 16px;
+    padding: 10px;
+    cursor: pointer;
+  }
+  body.dark-mode {
+    background-color: palevioletred;
+    color: #fff;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: maroon;
+    min-width: 160px;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    z-index: 1;
+    text-align: left; 
+  }
+  .dropdown-content a {
+    color: white;
+    padding: 10px 16px;
+    text-decoration: none;
+    display: block;
+    font-weight: bold; 
+    font-size: 10px; 
+  }
+  .dropdown-content a:hover {
+    background-color: darkolivegreen; 
+  }
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+</style>
+</head>
+<body>
+<header>
+  <nav>
+    <div class="logo">Welcome to my Responsive Website</div>
+    <div class="signup">
+      <a href="#">Sign In</a>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Explore</button>
+      <div class="dropdown-content">
+        <a href="#">Nature</a>
+        <a href="#">Travel</a>
+        <a href="#">Food</a>
+        <div class="dropdown">
+          <a href="#">Technology</a>
+          <div class="dropdown-content">
+            <a href="#">Computers</a>
+            <a href="#">Internet</a>
+            <a href="#">Software</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+<main>
+  <h2 style="font-size: 28px;">Explore my amazing collection of nature images!</h2>
+  <p style="font-size: 18px;">Immerse yourself in the beauty of nature with our stunning collection of images capturing serene landscapes, vibrant flora, and majestic wildlife. Let these breathtaking snapshots transport you to awe-inspiring natural wonders from around the world.</p>
+  <div class="buttons">
+    <button onclick="visitPage()">Visit</button>
+    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <button onclick="downloadFile()">Download</button>
+  </div>
+  <div class="images-container">
+    <img src="IMAGES/images-popopopopo.jpeg" alt="Nature Image 1">
+    <img src="IMAGES/images-popopopopopopo.jpeg" alt="Nature Image 2">
+    <img src="IMAGES/images-popopopopopopopo.jpg" alt="Nature Image 3">
+    <img src="IMAGES/images-popopopopopopopopopopopo.avif" alt="Nature Image 4">
+    <img src="IMAGES/images-popopopopopopopopopopopopopo.jpeg" alt="Nature Image 5">
+    <img src="IMAGES/images-popopopopopopopopopopopopopopopopopo.avif" alt="Nature Image 6">
+    <img src="IMAGES/images-gagagagaggagaga.jpeg" alt="Nature Image 7">
+    <img src="IMAGES/images-gagagaggagagga.jpeg">
+  </div>
+</main>
+<footer>
+  <div class="social-icons">
+    <a href="#"><i class="fab fa-facebook" style="color: #3b7798;"></i></a>
+    <a href="#"><i class="fab fa-twitter" style="color: #1df29d;"></i></a>
+    <a href="#"><i class="fab fa-instagram" style="color: #6d1a29;"></i></a>
+    <a href="#"><i class="fab fa-linkedin" style="color: #3f5617;"></i></a>
+    <a href="#"><i class="far fa-envelope" style="color: rgb(92, 28, 28);"></i></a>
+
+  </div>
+  <p>&copy; 2024 Responsive Website. All rights reserved.</p>
+  <footer style="background-color: #ffcc00; color: #fff; padding: 20px; text-align: center;">
+    
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook" style="color: #3b5998;"></i></a>
+      <a href="#"><i class="fab fa-twitter" style="color: #1da1f2;"></i></a>
+      <a href="#"><i class="fab fa-instagram" style="color: #e4405f;"></i></a>
+      <a href="#"><i class="fab fa-linkedin" style="color: #0077b5;"></i></a>
+      <a href="#"><i class="far fa-envelope" style="color: rgb(119, 31, 31);"></i></a>
+
+      
+
+    </div>
+    <div class="subscribe" style="margin-top: 20px;">
+      <p style="font-weight: bold; font-size: 24px; color: #000;">Subscribe Us</p>
+      <form action="#" method="post">
+        <input type="email" name="email" placeholder="Enter your email" style="padding: 10px; border-radius: 8px; border: 2px solid #000;">
+        <input type="submit" value="Subscribe" style="padding: 10px 20px; border-radius: 8px; background-color: #000; color: #fff; border: none; cursor: pointer;">
+      </form>
+    </div>
+    <div class="footer-links" style="margin-top: 20px;">
+      <a href="#" style="color: #000;">Privacy Policy</a>
+      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <a href="#" style="color: #000;">Terms and Conditions</a>
+    </div>
+    <p style="font-weight: bold; font-size: 20px; color: #000;">&copy; 2024 Responsive Website. All rights reserved.</p>
+  </footer>
+  
+</footer>
+<script>
+  
+  
+  console.log("This is a sample JavaScript for interactivity.");
+
+  function visitPage() {
+    
+    window.location.href = "https://example.com";
+  }
+
+  function downloadFile() {
+    
+    window.location.href = "https://example.com/file.pdf";
+  }
+
+  
+  const images = document.querySelectorAll('.images-container img');
+  images.forEach(image => {
+    image.addEventListener('click', () => {
+      const modal = document.createElement('div');
+      modal.classList.add('modal');
+      modal.innerHTML = `<img src="${image.src}" alt="${image.alt}">`;
+      modal.addEventListener('click', () => {
+        modal.remove();
+      });
+      document.body.appendChild(modal);
+    });
+  });
+
+  
+  const scrollToTopButton = document.createElement('button');
+  scrollToTopButton.innerHTML = '↑';
+  scrollToTopButton.classList.add('scroll-to-top-button');
+  scrollToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+  document.body.appendChild(scrollToTopButton);
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 200) {
+      scrollToTopButton.style.display = 'block';
+    } else {
+      scrollToTopButton.style.display = 'none';
+    }
+  });
+
+  
+  const dropdownButton = document.querySelector('.dropbtn');
+  const dropdownContent = document.querySelector('.dropdown-content');
+  dropdownButton.addEventListener('click', () => {
+    dropdownContent.classList.toggle('show');
+  });
+
+  
+  const darkModeToggle = document.createElement('button');
+  darkModeToggle.innerHTML = 'Toggle Dark Mode';
+  darkModeToggle.classList.add('dark-mode-toggle');
+  const colors = ['#ff6347', '#00ff7f', '#1e90ff', '#ff00ff', '#ffa500', '#ffff00']; 
+  let currentIndex = 0; 
+  darkModeToggle.addEventListener('click', () => {
+    document.body.style.backgroundColor = colors[currentIndex]; 
+    currentIndex = (currentIndex + 1) % colors.length; 
+  });
+  document.body.appendChild(darkModeToggle);
+</script>
+</body>
+</html>
